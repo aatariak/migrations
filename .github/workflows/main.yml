@@ -37,5 +37,5 @@ jobs:
           REPOSITORY: aatariak-migrations
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -f docker/Dockerfile -t $REGISTRY/$REPOSITORY:${{ steps.extract_branch.outputs.branch }} .
+          docker build -t $REGISTRY/$REPOSITORY:${{ steps.extract_branch.outputs.branch }} .
           docker push $REGISTRY/$REPOSITORY:${{ steps.extract_branch.outputs.branch }}
