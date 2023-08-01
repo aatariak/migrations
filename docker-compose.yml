@@ -1,0 +1,6 @@
+version: '3'
+services:
+  flyway:
+    build:
+      context: .
+    command: -url=jdbc:postgresql://192.168.1.169:5430/aatariak_db -user=username -password=password -connectRetries=60 migrate
