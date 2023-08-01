@@ -26,12 +26,6 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Download the jar from previous job
-        uses: actions/download-artifact@v3
-        with:
-          name: jar-build
-          path: aatariak-rest/target
-
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
